@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/alarm_bg"
+    >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg3"
+        android:id="@+id/yuntitlebar">
+        <ImageButton
+            android:id="@+id/yun_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alarm_back"
+            android:layout_gravity="left"
+            android:layout_marginLeft="4dip"/>
+        <TextView 
+            android:id="@+id/titlebartitle"
+            android:layout_width="20dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_label"
+            />
+        <ImageButton
+            android:id="@+id/yun_menu_item_add_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alarm_new"
+            android:layout_gravity="right"
+            android:layout_marginLeft="4dip"/>
+            />
+    </LinearLayout>
+	<ListView
+	    android:layout_below="@id/yuntitlebar"
+   		android:id="@+id/alarms_list"
+   		android:layout_marginLeft="5dip"
+   		android:layout_marginRight="5dip"
+    	android:layout_width="match_parent"
+    	android:cacheColorHint="@color/transparent"
+    	android:layout_height="wrap_content"/>
+
+</RelativeLayout>
