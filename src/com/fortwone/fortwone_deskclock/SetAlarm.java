@@ -32,6 +32,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -68,8 +69,8 @@ public class SetAlarm extends PreferenceActivity implements Preference.OnPrefere
     private int     mMinute;
     private TimePickerDialog mTimePickerDialog;
     private Alarm   mOriginalAlarm;
-    private ImageButton yundone;
-    private ImageButton yundelete;
+    private Button yundone;
+    private Button yundelete;
 
     @Override
     protected void onCreate(Bundle icicle) {
@@ -142,30 +143,11 @@ public class SetAlarm extends PreferenceActivity implements Preference.OnPrefere
                     saveAndExit();
                 }
             });
-            yundone=(ImageButton)findViewById(R.id.yundone);
-            yundelete=(ImageButton)findViewById(R.id.yundelete);
-            yundone.setOnClickListener(new OnClickListener() {
-    			
-    			@Override
-    			public void onClick(View V) {
-    				long time = saveAlarm(null);
-                    if(mEnabledPref.isChecked()) {
-                        popAlarmSetToast(SetAlarm.this, time);
-                    }
-                    finish();				
-    			}
-    		});
-            yundelete.setOnClickListener(new OnClickListener() {
-    			
-    			@Override
-    			public void onClick(View V) {
-    				deleteAlarm();			
-    			}
-    		});
-        }
 
-        // Attach actions to each button.
-        Button b = (Button) findViewById(R.id.alarm_save);
+        } 
+
+        // Attach actions to each button.设置按钮动作
+        Button b = (Button) findViewById(R.id.yundone);
         if (b != null) {
             b.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
@@ -186,9 +168,10 @@ public class SetAlarm extends PreferenceActivity implements Preference.OnPrefere
                 }
             });
         }
-        b = (Button) findViewById(R.id.alarm_delete);
+        b = (Button) findViewById(R.id.yundelete);
         if (b != null) {
             if (mId == -1) {
+            	//如果是创建闹钟就隐藏删除的图标
                 b.setEnabled(false);
                 b.setVisibility(View.GONE);
             } else {
