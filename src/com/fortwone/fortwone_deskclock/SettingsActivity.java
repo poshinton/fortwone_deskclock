@@ -52,6 +52,7 @@ public class SettingsActivity extends PreferenceActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
+        setContentView(R.layout.settinglayout);
 
         final AlarmPreference ringtone =
                 (AlarmPreference) findPreference(KEY_DEFAULT_RINGTONE);

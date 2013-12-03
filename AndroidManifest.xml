@@ -61,6 +61,7 @@
 
         <activity android:name="SettingsActivity"
                 android:label="@string/settings"
+                android:theme="@android:style/Theme.Holo.Light.NoActionBar"
                 android:taskAffinity=""
                 android:excludeFromRecents="true"
                 >
