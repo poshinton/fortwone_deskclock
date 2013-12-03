@@ -361,6 +361,7 @@ public class DeskClock extends Activity {
                 Settings.System.NEXT_ALARM_FORMATTED);
         if (!TextUtils.isEmpty(nextAlarm)) {
             mNextAlarm.setText(getString(R.string.control_set_alarm_with_existing, nextAlarm));
+            mNextAlarm.setTextSize(20);
             mNextAlarm.setVisibility(View.VISIBLE);
         } else if (mAlarmButton != null) {
             mNextAlarm.setVisibility(View.INVISIBLE);

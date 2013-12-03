@@ -39,6 +39,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CursorAdapter;
 import android.widget.ImageButton;
@@ -60,8 +61,10 @@ public class AlarmClock extends Activity implements OnItemClickListener {
     private LayoutInflater mFactory;
     private ListView mAlarmsList;
     private Cursor mCursor;
-    private ImageButton yun_home;
-    private ImageButton yun_menu_item_add_alarm;
+    private ImageButton yunadd;
+    private Button yunhome;
+    private ImageButton yunsetting;
+    
 
     private void updateAlarm(boolean enabled,
             Alarm alarm) {
@@ -200,34 +203,54 @@ public class AlarmClock extends Activity implements OnItemClickListener {
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.alarm_clock);
-        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+
         mFactory = LayoutInflater.from(this);
         mPrefs = getSharedPreferences(PREFERENCES, 0);
         mCursor = Alarms.getAlarmsCursor(getContentResolver());
+     
         updateLayout();
         
+        yunadd=(ImageButton)findViewById(R.id.yunadd);
+        yunhome=(Button)findViewById(R.id.yunhome);
+        yunsetting=(ImageButton)findViewById(R.id.yunset);
+        yunadd.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View V) {
+				Intent intent=new Intent();
+    			intent.setClass(AlarmClock.this, SetAlarm.class);
+    			startActivity(intent);				
+			}
+		});
+        yunhome.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View V) {
+				Intent intent=new Intent();
+    			intent.setClass(AlarmClock.this, DeskClock.class);
+    			startActivity(intent);				
+			}
+		});
+        yunsetting.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View V) {
+				Intent intent=new Intent();
+    			intent.setClass(AlarmClock.this, SettingsActivity.class);
+    			startActivity(intent);				
+			}
+		});
     }
-    class yun_menuListener implements OnClickListener{
-
+    class yunaddf implements OnClickListener{
+		
 		@Override
 		public void onClick(View v) {
-			addNewAlarm();			
-		}
-    	
-    }
-    class yun_homeListener implements OnClickListener{
-
-		@Override
-		public void onClick(View v) {
-			Intent intent = new Intent();
-			intent.setClass(AlarmClock.this, DeskClock.class);
+			Intent intent=new Intent();
+			intent.setClass(AlarmClock.this, SetAlarm.class);
 			startActivity(intent);
-			System.out.print("yunyunsunsun");
-            finish();			
 		}
-    }
+	}	
+    	
 
     private void updateLayout() {
         setContentView(R.layout.alarm_clock);

@@ -64,7 +64,7 @@
         android:textSize="34sp"
         android:gravity="bottom|center"
         android:textColor="@color/dark"
-        android:background="@drawable/bg3"/>
+        android:background="@drawable/yun_white"/>
     </LinearLayout>
         <View 
             android:id="@+id/window_tint"

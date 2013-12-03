@@ -16,7 +16,8 @@
 
 package com.fortwone.fortwone_deskclock;
 
-import com.fortwone.fortwone_deskclock.R;
+import java.util.List;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
@@ -37,8 +38,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -59,25 +62,32 @@ public class SetAlarm extends PreferenceActivity implements Preference.OnPrefere
     private AlarmPreference mAlarmPref;
     private CheckBoxPreference mVibratePref;
     private RepeatPreference mRepeatPref;
-
+    private ArrayAdapter nameAdapter;
     private int     mId;
     private int     mHour;
     private int     mMinute;
     private TimePickerDialog mTimePickerDialog;
     private Alarm   mOriginalAlarm;
+    private ImageButton yundone;
+    private ImageButton yundelete;
 
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        // Override the default content view.
         setContentView(R.layout.set_alarm);
 
         EditText label = (EditText) getLayoutInflater().inflate(R.layout.alarm_label, null);
         ListView list = (ListView) findViewById(android.R.id.list);
+        
+       nameAdapter = new ArrayAdapter<String>(this, R.layout.listviewtext,android.R.id.list);
+   //     nameAdapter=new ArrayAdapter<String>(this, R.layout.listviewtext);
+    //    nameAdapter=new ArrayAdapter<String>(this, android.R.id.list, R.layout.listviewtext);
+      //  nameAdapter=new ArrayAdapter<String>(this, R.layout.set_alarm,R.layout.listviewtext );
+        list.setAdapter(nameAdapter);
+        
         list.addFooterView(label);
 
-        // TODO Stop using preferences for this view. Save on done, not after
         // each change.
         addPreferencesFromResource(R.xml.alarm_prefs);
 
@@ -132,6 +142,26 @@ public class SetAlarm extends PreferenceActivity implements Preference.OnPrefere
                     saveAndExit();
                 }
             });
+            yundone=(ImageButton)findViewById(R.id.yundone);
+            yundelete=(ImageButton)findViewById(R.id.yundelete);
+            yundone.setOnClickListener(new OnClickListener() {
+    			
+    			@Override
+    			public void onClick(View V) {
+    				long time = saveAlarm(null);
+                    if(mEnabledPref.isChecked()) {
+                        popAlarmSetToast(SetAlarm.this, time);
+                    }
+                    finish();				
+    			}
+    		});
+            yundelete.setOnClickListener(new OnClickListener() {
+    			
+    			@Override
+    			public void onClick(View V) {
+    				deleteAlarm();			
+    			}
+    		});
         }
 
         // Attach actions to each button.
