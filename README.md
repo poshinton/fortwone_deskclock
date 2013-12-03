@@ -6,12 +6,19 @@ from android 4.1 aosp & make it indepentent
 base on jb deskclock with new ui design   
 
 change deskclock UI
+
 change alarmclock UI
-change setalarm UI\n
+
+change setalarm UI
+
 change number font type
+
 remove actionbar
+
 fix the issue of two button can't work
+
 change the settting ui
+
 .......
 **************************************************
 
