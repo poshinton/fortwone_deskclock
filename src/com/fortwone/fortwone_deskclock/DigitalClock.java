@@ -111,7 +111,7 @@ public class DigitalClock extends RelativeLayout {
         super.onFinishInflate();
         
         mTimeDisplay = (AndroidClockTextView) findViewById(R.id.timeDisplay);
-        Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(),"fonts/Annabelle.ttf");
+        Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(),"fonts/yun_num.ttf");
         ((AndroidClockTextView)findViewById(R.id.timeDisplay)).setTypeface(typeFace);
         mAmPm = new AmPm(this);
         mCalendar = Calendar.getInstance();

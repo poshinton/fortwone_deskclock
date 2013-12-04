@@ -17,6 +17,9 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:background="@color/dark"
     android:layout_height="match_parent"
     >
 
@@ -39,6 +42,8 @@
                 style="?android:attr/windowTitleStyle"
                 android:singleLine="true"
                 android:ellipsize="end"
+                android:textSize="45sp"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -50,13 +55,22 @@
             android:background="@android:color/holo_blue_light" />
 
     </LinearLayout>
+    <TextView 
+        android:id="@+id/yun_alarmtitle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+       	android:gravity="center_horizontal"/>
+
 
     <com.fortwone.fortwone_deskclock.DigitalClock
         android:id="@+id/digitalClock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="24dip"
+        android:paddingTop="194dip"
         android:paddingLeft="24dip"
         android:paddingRight="20dip"
         android:paddingBottom="80dp"
@@ -69,7 +83,7 @@
             android:id="@+id/timeDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="80dp"
+            android:textSize="50sp"
             android:layout_alignParentRight="true"
             android:textColor="?android:attr/textColorPrimary"
             android:layout_marginRight="44dip"/>
@@ -80,40 +94,38 @@
             android:layout_width="40dip"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_alignParentRight="true"
             android:layout_alignBaseline="@id/timeDisplay"
             android:textColor="?android:attr/textColorPrimary"/>
 
     </com.fortwone.fortwone_deskclock.DigitalClock>
 
-    <Button
-        android:id="@+id/snooze"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/topPanel"
-        android:layout_alignBottom="@id/digitalClock"
-        android:paddingBottom="16dp"
-        android:gravity="bottom|center_horizontal"
-        android:text="@string/alarm_alert_snooze_text" />
+		
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:layout_marginLeft="16dip"
-        android:layout_marginRight="16dip"
-        android:layout_below="@id/snooze"
-        android:background="?android:attr/dividerHorizontal" />
+
+
 
     <Button
         android:id="@+id/dismiss"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginTop="15dip"
         android:gravity="center"
-        android:layout_below="@id/divider"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dip"
+        android:background="@drawable/yun_green_button"
         android:text="@string/alarm_alert_dismiss_text" />
+        <Button
+        android:id="@+id/snooze"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/dismiss"
+        android:paddingBottom="16dp"
+        android:background="@drawable/yun_red_button"
+        android:gravity="bottom|center_horizontal"
+        android:text="@string/alarm_alert_snooze_text" />
 
 </RelativeLayout>

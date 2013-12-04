@@ -109,9 +109,8 @@ public class AlarmAlertFullScreen extends Activity {
     private void setTitle() {
         final String titleText = mAlarm.getLabelOrDefault(this);
 
-        TextView tv = (TextView) findViewById(R.id.alertTitle);
+        TextView tv = (TextView) findViewById(R.id.yun_alarmtitle);
         tv.setText(titleText);
-
         setTitle(titleText);
     }
 

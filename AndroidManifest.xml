@@ -77,7 +77,7 @@
 
         <activity android:name="AlarmAlert"
                 android:excludeFromRecents="true"
-                android:theme="@android:style/Theme.Holo.Dialog"
+                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
                 android:launchMode="singleInstance"
                 android:taskAffinity=""
                 android:configChanges="orientation|keyboardHidden|keyboard|navigation"/>
@@ -86,7 +86,7 @@
              but full-screen so that it can turn the display on. -->
         <activity android:name="AlarmAlertFullScreen"
                 android:excludeFromRecents="true"
-                android:theme="@style/AlarmAlertFullScreenTheme"
+                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
                 android:launchMode="singleInstance"
                 android:taskAffinity=""
                 android:configChanges="orientation|keyboardHidden|keyboard|navigation"/>

@@ -36,7 +36,6 @@
                 android:textColor="@color/dark"
                 android:text="@string/done"
                 android:background="@color/transparent"
-                android:drawableLeft="@drawable/alarm_done"
                 style="@android:style/Widget.Holo.ActionBar.TabText" />
 
     </LinearLayout>
