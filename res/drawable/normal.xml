@@ -4,13 +4,15 @@
     android:shape="rectangle"> 
     <!-- 填充的渐变颜色 --> 
     <gradient
-        android:startColor="#3f75a3"
-        android:centerColor="#4b81b0"
+        android:startColor="#dadada"
+        android:centerColor="#dfdfdf"
         android:angle="90"
-        android:endColor="#5b99c2"/>
+        android:endColor="#ededed"/>
     <!-- 设置颜色为蓝色渐变 -->
     <!-- 设置按钮的四个角为弧形 --> 
     <!-- android:radius 弧形的半径 --> 
+    <stroke android:width="0.5dp"
+        android:color="#000000"/>
     <corners android:radius="10dip" /> 
       
 <!-- padding：Button里面的文字与Button边界的间隔 --> 
