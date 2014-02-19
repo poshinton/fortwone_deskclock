@@ -290,7 +290,7 @@ public class DeskClock extends Activity {
         mDate = (TextView) findViewById(R.id.date);
 
         final int color = mDimmed ? SCREEN_SAVER_COLOR_DIM : SCREEN_SAVER_COLOR;
-        Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/Jura-Bold.ttf");
+        Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/yun_num.ttf");
         ((AndroidClockTextView)findViewById(R.id.timeDisplay)).setTextColor(color);
         ((AndroidClockTextView)findViewById(R.id.timeDisplay)).setTypeface(typeFace);
         ((AndroidClockTextView)findViewById(R.id.am_pm)).setTextColor(color);
