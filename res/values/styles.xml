@@ -66,4 +66,13 @@
     <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
   	 <item name="android:button">@drawable/checkbox</item>
   	</style>
+  	<style name="yun_theme" parent="android:Theme.Holo">
+            <item name="android:shadowColor">#000000</item>
+            <item name="android:shadowDx">2</item>
+            <item name="android:shadowDy">2</item>
+            <item name="android:shadowRadius">2</item>
+            <item name="android:textSize">22sp</item>
+           	<item name="android:textColor">#ffffff</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
 </resources>

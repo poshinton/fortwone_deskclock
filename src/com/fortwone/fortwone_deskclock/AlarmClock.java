@@ -209,7 +209,8 @@ public class AlarmClock extends Activity implements OnItemClickListener {
         mCursor = Alarms.getAlarmsCursor(getContentResolver());
      
         updateLayout();
-        
+
+	   
         yunadd=(ImageButton)findViewById(R.id.yunadd);
         yunhome=(Button)findViewById(R.id.yunhome);
         yunsetting=(ImageButton)findViewById(R.id.yunset);
