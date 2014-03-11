@@ -5,7 +5,7 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
-    <original-package android:name="com.android.alarmclock" />
+    <original-package android:name="com.fortwone.fortwone_deskclock." />
     <original-package android:name="com.fortwone.fortwone_deskclock" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -55,7 +55,7 @@
             </intent-filter>
         </activity>
 
-        <activity-alias android:name="com.android.alarmclock.AlarmClock"
+        <activity-alias android:name="com.fortwone.fortwone_deskclock..AlarmClock"
                 android:targetActivity="com.fortwone.fortwone_deskclock.AlarmClock"
                 android:exported="true" />
 
@@ -133,7 +133,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.alarmclock.AnalogAppWidgetProvider" android:label="@string/analog_gadget"
+        <receiver android:name="com.fortwone.fortwone_deskclock..AnalogAppWidgetProvider" android:label="@string/analog_gadget"
         	android:icon="@drawable/time">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
