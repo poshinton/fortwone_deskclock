@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.fortwone.fortwone_deskclock"
+        package="com.android.deskclock"
         android:versionCode="203" android:versionName="2.0.3">
         <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
-    <original-package android:name="com.fortwone.fortwone_deskclock." />
-    <original-package android:name="com.fortwone.fortwone_deskclock" />
+    <original-package android:name="com.android.deskclock." />
+    <original-package android:name="com.android.deskclock" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -21,7 +21,7 @@
                  android:icon="@drawable/time">
 
         <provider android:name="AlarmProvider"
-                android:authorities="com.fortwone.fortwone_deskclock"
+                android:authorities="com.android.deskclock"
                 android:exported="false" />
 
         <activity android:name="DeskClock"
@@ -55,13 +55,13 @@
             </intent-filter>
         </activity>
 
-        <activity-alias android:name="com.fortwone.fortwone_deskclock..AlarmClock"
-                android:targetActivity="com.fortwone.fortwone_deskclock.AlarmClock"
+        <activity-alias android:name="com.android.deskclock..AlarmClock"
+                android:targetActivity="com.android.deskclock.AlarmClock"
                 android:exported="true" />
 
         <activity android:name="SettingsActivity"
                 android:label="@string/settings"
-                android:theme="@android:style/Theme.Holo.NoActionBar"
+                android:theme="@style/yun_settingtheme"
                 android:taskAffinity=""
                 android:excludeFromRecents="true"
                 >
@@ -72,12 +72,12 @@
 
         <activity android:name="SetAlarm" 
                 android:label="@string/set_alarm"
-                android:theme="@android:style/Theme.Holo.NoActionBar"
+                android:theme="@style/yun_settingtheme"
                 android:configChanges="orientation|keyboardHidden|keyboard|navigation" />
 
         <activity android:name="AlarmAlert"
                 android:excludeFromRecents="true"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+                android:theme="@style/yun_alarmtheme"
                 android:launchMode="singleInstance"
                 android:taskAffinity=""
                 android:configChanges="orientation|keyboardHidden|keyboard|navigation"/>
@@ -94,7 +94,7 @@
         <receiver android:name="AlarmReceiver"
                 android:exported="false">
             <intent-filter>
-                <action android:name="com.fortwone.fortwone_deskclock.ALARM_ALERT" />
+                <action android:name="com.android.deskclock.ALARM_ALERT" />
                 <action android:name="alarm_killed" />
                 <action android:name="cancel_snooze" />
             </intent-filter>
@@ -120,7 +120,7 @@
                 android:exported="false"
                 android:description="@string/alarm_klaxon_service_desc">
             <intent-filter>
-                <action android:name="com.fortwone.fortwone_deskclock.ALARM_ALERT" />
+                <action android:name="com.android.deskclock.ALARM_ALERT" />
             </intent-filter>
         </service>
 
@@ -133,16 +133,16 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.fortwone.fortwone_deskclock..AnalogAppWidgetProvider" android:label="@string/analog_gadget"
+        <receiver android:name="com.android.deskclock..AnalogAppWidgetProvider" android:label="@string/analog_gadget"
         	android:icon="@drawable/time">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.oldName" android:value="com.fortwone.fortwone_deskclock.AnalogAppWidgetProvider" />
+            <meta-data android:name="android.appwidget.oldName" android:value="com.android.deskclock.AnalogAppWidgetProvider" />
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/analog_appwidget" />
         </receiver>
 
-        <activity android:name=".Screensaver"
+        <activity android:name="com.android.deskclock.Screensaver"
             android:label="@string/app_label"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:hardwareAccelerated="true"

@@ -75,4 +75,19 @@
            	<item name="android:textColor">#ffffff</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+     <style name="yun_settingtheme" parent="android:Theme.Holo.NoActionBar">
+            <item name="android:shadowColor">#000000</item>
+            <item name="android:shadowDx">2</item>
+            <item name="android:shadowDy">2</item>
+            <item name="android:shadowRadius">2</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="yun_alarmtheme" parent="android:Theme.Holo.NoActionBar.Fullscreen">
+            <item name="android:shadowColor">#000000</item>
+            <item name="android:shadowDx">2</item>
+            <item name="android:shadowDy">2</item>
+            <item name="android:shadowRadius">2</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
 </resources>

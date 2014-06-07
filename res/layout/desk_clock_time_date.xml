@@ -38,12 +38,12 @@
         android:background="@drawable/bg4"
         android:orientation="vertical"
         >
-    <com.fortwone.fortwone_deskclock.DigitalClock android:id="@+id/time"
+    <com.android.deskclock.DigitalClock android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         >
 
-        <com.fortwone.fortwone_deskclock.AndroidClockTextView 
+        <com.android.deskclock.AndroidClockTextView 
             android:id="@+id/timeDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:textColor="@color/dark"
             />
 
-        <com.fortwone.fortwone_deskclock.AndroidClockTextView 
+        <com.android.deskclock.AndroidClockTextView 
             android:id="@+id/am_pm"
             android:layout_width="@dimen/time_margin_right"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             useClockTypeface="false"
             />
 
-    </com.fortwone.fortwone_deskclock.DigitalClock>
+    </com.android.deskclock.DigitalClock>
 
     <TextView android:id="@+id/date"
         android:layout_width="wrap_content"
