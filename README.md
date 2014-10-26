@@ -20,7 +20,7 @@ change the settting ui
 change alarmalart UI
 change alarmalartfullscreen UI
 fix label missing bugs
-
+add four tabs
 .......
 **************************************************
 
